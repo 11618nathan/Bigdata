@@ -3,7 +3,7 @@ text <- "텍스트 마이닝(text mining): 자연어(natural language)로 구성된 비정형 텍
 install.packages("KoNLP")
 install.packages("wordcloud")
 library(KoNLP) 
-library(wordcloud) 
+library(wordcloud)
 
 useSejongDic()
 nouns <- extractNoun(text) 
@@ -14,8 +14,8 @@ nouns <- nouns[nchar(nouns)>=2]
 nouns <-gsub("텍스트마이닝.*","텍스트마이닝", nouns)
 nouns <-gsub("데이터마이닝.*","데이터마이닝", nouns)
 
-wordFreq <-table(nouns)  #빈도 계산
+# 빈도 계산
+wordFreq <-table(nouns)
 pal <- brewer.pal(6, "Dark2")
 
 wordcloud(words=names(wordFreq), freq=wordFreq, colors=pal, min.freq=1, random.order=F)
-
