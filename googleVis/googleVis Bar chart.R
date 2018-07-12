@@ -12,4 +12,3 @@ Bar <- gvisBarChart(df)
 
 # plot 안에 chart 지정 변수 불러오기
 plot(Bar)
-
